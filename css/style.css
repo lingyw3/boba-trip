@@ -136,7 +136,7 @@ html, body {
   } */
   .popup-content {
     height: 100%;
-    /* overflow-y: auto;  */
+    overflow-y: auto; 
     -webkit-overflow-scrolling: touch; /* iOS 惯性滑动 */
     overscroll-behavior: contain; /* 阻止传递给父元素（地图） */
     padding: 10px;
