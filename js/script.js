@@ -1,13 +1,9 @@
-// Initialize Leaflet map
-const map = L.map('map').setView([35, 0], 2);
+// === Initialize Leaflet map ===
+const map = L.map('map');
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map);
-
-setTimeout(() => {
-  map.invalidateSize();
-}, 100);
 
 // === Store ID → Full Store Object Mapping ===
 const storeDataMap = {};
@@ -31,7 +27,7 @@ if (typeof window.charlietownSHStore !== "undefined") {
   storeDataMap["charlietown_sh_ch"] = window.charlietownSHStore;
 }
 
-// === Store Marker List ===
+// === Store List ===
 const bobaStores = [
   { id: "coco_aa_us", name: "Coco - North Campus", lat: 42.3029, lng: -83.7056 },
   { id: "miustea_miami_us", name: "Miu's Tea – Miami", lat: 25.7621, lng: -80.1926 },
@@ -41,9 +37,12 @@ const bobaStores = [
   { id: "charlietown_sh_ch", name: "Charlestown – Shanghai", lat: 31.2435, lng: 121.4372 }
 ];
 
-// === Place Markers and Configure Popups ===
+// === Place Markers + Create Feature Group for fitBounds ===
+const markerGroup = L.featureGroup();
+
 bobaStores.forEach(store => {
   const marker = L.marker([store.lat, store.lng]).addTo(map);
+  markerGroup.addLayer(marker);
 
   marker.bindTooltip(store.name, {
     permanent: true,
@@ -82,7 +81,7 @@ bobaStores.forEach(store => {
 
       document.getElementById("popup").classList.remove("hidden");
 
-      // Disable map interaction when popup is open
+      // Disable map interactions
       map.dragging.disable();
       map.touchZoom.disable();
       map.doubleClickZoom.disable();
@@ -91,7 +90,10 @@ bobaStores.forEach(store => {
   }
 });
 
-// === Close Popup Logic ===
+// === Fit Map to Marker Bounds ===
+map.fitBounds(markerGroup.getBounds());
+
+// === Popup Close Button ===
 document.getElementById("close-popup").addEventListener("click", () => {
   document.getElementById("popup").classList.add("hidden");
   map.dragging.enable();
@@ -100,7 +102,7 @@ document.getElementById("close-popup").addEventListener("click", () => {
   map.scrollWheelZoom.enable();
 });
 
-// Close on outside click
+// === Click outside popup to close ===
 window.addEventListener("click", (e) => {
   const popup = document.getElementById("popup");
   const isMarker = e.target.classList.contains("leaflet-marker-icon");

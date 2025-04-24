@@ -10,6 +10,8 @@ setTimeout(() => {
 }, 100);
 
 // === Store ID → Full Store Object Mapping ===
+
+
 const storeDataMap = {};
 
 if (typeof window.cocoStore !== "undefined") {
@@ -28,8 +30,9 @@ if (typeof window.threecateaLAStore !== "undefined") {
   storeDataMap["3catea_la_us"] = window.threecateaLAStore;
 }
 if (typeof window.charlietownSHStore !== "undefined") {
-  storeDataMap["charlietwon"] = window.charlietownSHStore;
+  storeDataMap["charlietown_sh_ch"] = window.charlietownSHStore;
 }
+
 // === Store Marker List ===
 const bobaStores = [
   { id: "coco_aa_us", name: "Coco - North Campus", lat: 42.3029, lng: -83.7056 },
@@ -37,7 +40,7 @@ const bobaStores = [
   { id: "debutea_ny_us", name: "Debutea – New York", lat: 40.729, lng: -73.9975 },
   { id: "mrtea_boston_us", name: "Mr. Tea – Boston", lat: 42.3509, lng: -71.0807 },
   { id: "3catea_la_us", name: "3catea – Pasadena", lat: 34.1460, lng: -118.1503 },
-  { id: "charlietwon", name: "Charlietwon", lat: 31.2435, lng: 121.4372 } // no popup yet
+  { id: "charlietown_sh_ch", name: "Charlestown – Shanghai", lat: 31.2435, lng: 121.4372 }
 ];
 
 // === Place Markers and Configure Popups ===
@@ -51,13 +54,12 @@ bobaStores.forEach(store => {
     className: 'custom-tooltip'
   }).openTooltip();
 
-  // Only attach popup if data exists
   if (storeDataMap[store.id]) {
     const fullStore = storeDataMap[store.id];
     const data = fullStore.storeData;
 
     marker.on('click', () => {
-      // Load Images
+      // Load images
       const imageContainer = document.querySelector(".popup-image-scroll");
       imageContainer.innerHTML = "";
       data.images.forEach(img => {
@@ -67,7 +69,7 @@ bobaStores.forEach(store => {
         imageContainer.appendChild(imgEl);
       });
 
-      // Load Text
+      // Load text
       document.getElementById("popup-store-name").textContent = fullStore.name;
       document.getElementById("popup-store-review").textContent = data.store_review;
       document.getElementById("popup-drink-name").textContent = data.drink.name;
@@ -81,7 +83,12 @@ bobaStores.forEach(store => {
       link.target = "_blank";
 
       document.getElementById("popup").classList.remove("hidden");
+
+      // Disable map interaction when popup is open
       map.dragging.disable();
+      map.touchZoom.disable();
+      map.doubleClickZoom.disable();
+      map.scrollWheelZoom.disable();
     });
   }
 });
@@ -90,8 +97,12 @@ bobaStores.forEach(store => {
 document.getElementById("close-popup").addEventListener("click", () => {
   document.getElementById("popup").classList.add("hidden");
   map.dragging.enable();
+  map.touchZoom.enable();
+  map.doubleClickZoom.enable();
+  map.scrollWheelZoom.enable();
 });
 
+// Close on outside click
 window.addEventListener("click", (e) => {
   const popup = document.getElementById("popup");
   const isMarker = e.target.classList.contains("leaflet-marker-icon");
@@ -101,5 +112,8 @@ window.addEventListener("click", (e) => {
       !isMarker) {
     popup.classList.add("hidden");
     map.dragging.enable();
+    map.touchZoom.enable();
+    map.doubleClickZoom.enable();
+    map.scrollWheelZoom.enable();
   }
 });
