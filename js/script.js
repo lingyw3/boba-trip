@@ -82,10 +82,15 @@ bobaStores.forEach(store => {
       document.getElementById("popup-drink-price").textContent = data.drink.price;
       document.getElementById("popup-location").textContent = data.location_text;
 
+      // const link = document.getElementById("popup-link");
+      // link.href = data.website;
+      // link.textContent = `Check out ${fullStore.name}'s website`;
+      // link.target = "_blank";
       const link = document.getElementById("popup-link");
       link.href = data.website;
       link.textContent = `Check out ${fullStore.name}'s website`;
-      link.target = "_blank";
+      link.classList.remove("hidden-link");
+
 
       document.getElementById("popup").classList.remove("hidden");
 
