@@ -59,12 +59,20 @@ bobaStores.forEach(store => {
       // Load images
       const imageContainer = document.querySelector(".popup-image-scroll");
       imageContainer.innerHTML = "";
-      data.images.forEach(img => {
+      // data.images.forEach(img => {
+      //   const imgEl = document.createElement("img");
+      //   imgEl.src = img;
+      //   imgEl.classList.add("popup-img");
+      //   imageContainer.appendChild(imgEl);
+      // });
+      data.images.forEach(imgObj => {
         const imgEl = document.createElement("img");
-        imgEl.src = img;
+        imgEl.src = imgObj.src;
+        imgEl.alt = imgObj.alt || "Boba shop photo";  // fallback alt
         imgEl.classList.add("popup-img");
         imageContainer.appendChild(imgEl);
       });
+      
 
       // Load text
       document.getElementById("popup-store-name").textContent = fullStore.name;

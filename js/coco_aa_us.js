@@ -5,10 +5,22 @@ const cocoStore = {
   isMain: true,
   storeData: {
     images: [
-      "images/coco_aa_us_1.jpg",
-      "images/coco_aa_us_2.jpg",
-      "images/coco_aa_us_3.jpg",
-      "images/coco_aa_us_4.jpg"
+      {
+        src: "images/coco_aa_us_1.jpg",
+        alt: "Outside look of Coco North Campus"
+      },
+      {
+        src: "images/coco_aa_us_2.jpg",
+        alt: "Coco's Tropical Fruit Tea"
+      },
+      {
+        src: "images/coco_aa_us_3.jpg",
+        alt: "Coco's Taro Milk Tea"
+      },
+      {
+        src: "images/coco_aa_us_4.jpg",
+        alt: "Coco's Double Delight-My favorite!"
+      }
     ],
     store_review: "Went to the North Campus one—it’s not easy to get to without a car.",
     drink: {

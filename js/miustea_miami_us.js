@@ -5,9 +5,18 @@ const miusteaMiamiStore = {
     isMain: true,
     storeData: {
       images: [
-        "images/miustea_miami_us_1.jpg",
-        "images/miustea_miami_us_2.jpg",
-        "images/miustea_miami_us_3.jpg"
+        {
+          src: "images/miustea_miami_us_1.jpg",
+          alt: "Miu's Tea choices of My friends and I-second time "
+        },
+        {
+          src: "images/miustea_miami_us_2.jpg",
+          alt: "Miu's Tea choices of My friends and I-first time"
+        },
+        {
+          src: "images/miustea_miami_us_3.jpg",
+          alt: "Miu's Milk Tea-my choice!"
+        }
       ],
       store_review: "Just opened near Brickell City Centre. Love the vibe — perfect spot to chill after shopping or while waiting for traffic to ease up.",
       drink: {

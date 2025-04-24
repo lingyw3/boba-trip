@@ -258,7 +258,7 @@ html, body {
 
   @media (min-width: 900px) {
     .popup {
-      left: 32px;
+      left: 50%;
       bottom: 32px;
       width: 400px;
       height: auto;
@@ -268,4 +268,12 @@ html, body {
       overflow-y: auto;
     }
   }
-  
+
+  .leaflet-control-attribution a {
+    text-decoration: underline;
+    font-weight: 500;
+    color: #005b8f; /* higher contrast than #0078a8 */
+  }
+  .custom-tooltip{
+    font-size: 1em;
+  }

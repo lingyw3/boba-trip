@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Start a Boba Trip With Me!</title>
-  <link rel="stylesheet" href="css/html5reset.css" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/style_home.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="css/html5reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style_home.css">
   <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <nav class="navbar">
-          <div class="logo">🧋 Start a Boba Trip with Me!</div>
+          <h1 class="logo">🧋 Start a Boba Trip with Me!</h1>
           <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="boba.html">Boba Footprints</a></li>
@@ -29,11 +29,27 @@
          
         </p>
       </section>
+      <!-- <section id="boba-intro">
+        <h2>It's not just tea - It’s laughter, late nights, and memories. </h2>
+        <p class="boba-intro-text">
+          
+            <br>Behind every cup of boba is a memory I want to keep.<br>
+         
+        </p>
+      </section> -->
       
     <section class="boba-selection">
-      <img src="images/charlietown1.jpg" alt="Charlestown" class="boba-circle" id="charlietown-circle" onclick="showContent('charlietown')" />
-      <img src="images/tptea1.jpg" alt="TP Tea" class="boba-circle" id="tptea-circle" onclick="showContent('tptea')" />
-      <img src="images/mollytea1.jpg" alt="Molly Tea" class="boba-circle" id="mollytea-circle" onclick="showContent('mollytea')" />
+      
+      <button class="boba-circle-btn" onclick="showContent('charlietown')">
+        <img src="images/charlietown1.jpg" alt="Charlestown" class="boba-circle">
+      </button>
+      <button class="boba-circle-btn" onclick="showContent('tptea')">
+        <img src="images/tptea1.jpg" alt="TP Tea" class="boba-circle">
+      </button>
+      <button class="boba-circle-btn" onclick="showContent('mollytea')">
+        <img src="images/mollytea1.jpg" alt="Molly Tea" class="boba-circle">
+      </button>
+      
     </section>
 
         <section id="boba-detail">
@@ -67,7 +83,7 @@
         </div>
 
         <div id="boba-image">
-            <img id="boba-img-display" src="images/tptea2.jpg" alt="Boba Memory" />
+            <img id="boba-img-display" src="images/tptea2.jpg" alt="Boba Memory">
         </div>
         </section>
   </main>

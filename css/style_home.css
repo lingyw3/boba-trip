@@ -86,6 +86,14 @@
   .hidden {
     display: none;
   }
+/* button for img */
+  .boba-circle-btn {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+  }
+  
 /* style_home.css — Specific styles only for the Home Page */
 
 .boba-selection {

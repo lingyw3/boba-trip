@@ -5,9 +5,18 @@ const charlietownSHStore = {
     isMain: true,
     storeData: {
       images: [
-        "images/charlietown_sh_ch_1.jpg",
-        "images/charlietown_sh_ch_2.png",
-        "images/charlietown2.jpg"
+        {
+          src: "images/charlietown_sh_ch_1.jpg",
+          alt: "Exterior of Charlestown tea shop in Shanghai"
+        },
+        {
+          src: "images/charlietown_sh_ch_2.png",
+          alt: "Dr. Luoyi Milk Tea with pearls, close-up view"
+        },
+        {
+          src: "images/charlietown2.jpg",
+          alt: "My friends and I enjoying Charlietown's drinks"
+        }
       ],
       store_review: "We stopped by on Qixi Festival after seeing glowing reviews online. The wait was surprisingly short — only 10-15 minutes!",
       drink: {
