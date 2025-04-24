@@ -117,8 +117,12 @@ html, body {
     pointer-events: auto;
     overflow-y: auto;
   }
+  .popup {
+    max-height: 80vh;
+    border-radius: 16px;
+    overflow-y: auto;
+  }
 
-  
   .popup.hidden {
     display: none;
   }
