@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Start a Boba Trip With Me!</title>
+  <link rel="stylesheet" href="css/html5reset.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style_home.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+          <div class="logo">🧋 Start a Boba Trip with Me!</div>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="boba.html">Boba Footprints</a></li>
+            <li><a href="me.html">About Me</a></li>
+          </ul>
+        </nav>
+    </header>  
+
+  <main>
+    <section id="boba-intro">
+        <p class="boba-intro-text">
+          It’s not just tea - It’s laughter, late nights, and memories. 
+            <br>Behind every cup of boba is a memory I want to keep.<br>
+         
+        </p>
+      </section>
+      
+    <section class="boba-selection">
+      <img src="images/charlietown1.jpg" alt="Charlestown" class="boba-circle" id="charlietown-circle" onclick="showContent('charlietown')" />
+      <img src="images/tptea1.jpg" alt="TP Tea" class="boba-circle" id="tptea-circle" onclick="showContent('tptea')" />
+      <img src="images/mollytea1.jpg" alt="Molly Tea" class="boba-circle" id="mollytea-circle" onclick="showContent('mollytea')" />
+    </section>
+
+        <section id="boba-detail">
+        <div id="boba-text">
+            <p id="charlietown-text" class="boba-description hidden">
+                I spent Christmas in Shanghai with two old friends I hadn’t seen in a year.  
+                <br><br>
+                We grabbed boba from Charlestown Tea Company and took some photos together.  
+                <br><br>
+                Best boba in Shanghai!
+              </p>
+              
+            
+              <p id="tptea-text" class="boba-description hidden">
+                I met up with friends from New Orleans in Dallas for the Breakaway Music Festival.  
+                <br><br>
+                We had TP Tea before the show — and then completely let loose in the music, lights, and freedom of the night.  
+                <br><br>
+                Boba + beats + friends = My Night!
+              </p>
+              
+              
+              <p id="mollytea-text" class="boba-description hidden">
+                I spent St. Patrick’s Day in Chicago with my friends.  
+                <br><br>
+                We stopped by Chinatown and grabbed the top1 boba — Molly Tea.  
+                <br><br>
+                Later that night, I was back at the hotel working on a big data project... with Molly Tea keeping me company.
+              </p>
+              
+        </div>
+
+        <div id="boba-image">
+            <img id="boba-img-display" src="images/tptea2.jpg" alt="Boba Memory" />
+        </div>
+        </section>
+  </main>
+  <script src="js/coco_aa_us.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>
